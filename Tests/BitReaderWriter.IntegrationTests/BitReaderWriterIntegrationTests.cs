@@ -54,6 +54,15 @@ namespace BitReaderWriter.IntegrationTests
         }
 
         [TestMethod]
+        public void TestThatBitWriterIsDisposedCorrectlyAndDoesNotThrowException()
+        {
+            using (bitWriter = new BitWriter(outputStream))
+            {
+                bitWriter.WriteNBits(5, 123);
+            }
+        }
+
+        [TestMethod]
         public void TestThatBitReaderReadsFileContent()
         {
             var readContent = "";

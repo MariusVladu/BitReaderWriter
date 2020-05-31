@@ -47,9 +47,9 @@ namespace BitReaderWriter
 
         public void Dispose()
         {
-            outputStream.Dispose();
-
             Flush();
+
+            outputStream.Dispose();
         }
 
         private bool IsBufferFull()
